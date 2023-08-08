@@ -1,7 +1,7 @@
 from datetime import time
 
 import uvicorn
-from fastapi import FastAPI, File, UploadFile, FileResponse
+from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
