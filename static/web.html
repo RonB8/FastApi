@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+        <body>
+            <h1>Audio Example</h1>
+            <script>
+                    document.write({stam});
+                </script>
+            <audio id="audio" controls>
+                <source src="static/Most dog owners have.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <audio id="audio2" controls>
+                <source src="static/He Most dog owners have.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <button onclick="jumpToSecond(5,4)">I'm dont realized</button>
+<!--        <script>-->
+<!--            var audio = document.getElementById("audio");-->
+
+<!--            function jumpToSecond(seconds, pause_time) {-->
+<!--                var pos = audio.currentTime;-->
+<!--                audio.stop();-->
+<!--                audio2.play();-->
+<!--                audio2.currentTime = seconds;-->
+<!--                wait(pause_time);-->
+<!--                audio2.stop();-->
+<!--                audio.play();-->
+<!--                audio2.currentTime = pos;-->
+<!--            }-->
+
+<!--            window.onload = function () {-->
+<!--            jumpToSecond(5,4);-->
+<!--            audio.play();-->
+<!--              };-->
+<!--        </script>-->
+
+            <link rel = "stylesheet" href="http://pyscript.net/alpha/pyscript.css"/>
+<!--            <script defer src="http://pyscript.net/alpha/pyscript/js"></script>-->
+
+            <script>
+                    document.write("10");
+
+<!--                fetch('/get_two').then(response => response.json()).then(data => {-->
+<!--                two = data;-->
+<!--                }).catch(error => console.error(error));-->
+
+
+                var audio = document.getElementById("audio");
+                var audio2 = document.getElementById("audio2");
+
+
+                function jumpToSecond(seconds, pause_time) {
+                    var pos = audio.currentTime;
+                    <py-script>
+                    print("HELLO")
+                    pos_prev_sentence, length_prev_sentence = time_of_prev_sentence(audio, audio2, pos)
+                    </py-script>
+                    document.write(pos_prev_sentence);
+
+<!--                    var two = get_two();-->
+                    document.write(two);
+<!--                    document.write(ten);-->
+                    var pos_prev_sentence, length_prev_sentence;
+                    time_of_prev_sentence(audio, audio2, pos);
+                    document.write('after');
+                    audio.pause();
+                    audio2.play();
+                    audio2.currentTime = pos_prev_sentence;
+                setTimeout(function() {
+                    audio2.pause();
+                    audio.play();
+                    audio.currentTime = pos;
+                    }, length_prev_sentence * 1000);
+                }
+            </script>
+
+        </body>
+</html>
