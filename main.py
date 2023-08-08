@@ -359,7 +359,7 @@ async def ron5(sleep=3):
     return f"""
             <!DOCTYPE html>
             <html>
-            <body>
+            <head>
             <style>
         body {
             font-family: Arial, sans-serif;
@@ -383,6 +383,8 @@ async def ron5(sleep=3):
             max-width: 300px;
         }
     </style>
+    </head>
+    </body>
             <button onclick="jumpToSecond()">I'm dont realized</button>
             <audio id="audio" controls>
                                             <source src="{file_en}" type="audio/mp3">
@@ -416,6 +418,5 @@ async def ron5(sleep=3):
                                 }}, time_sleep * 1000);
                         }}
                 </script>
-            </body>
             </html>
             """
