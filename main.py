@@ -359,41 +359,72 @@ async def ron5(sleep=3):
     return f"""
             <!DOCTYPE html>
             <html>
+            <head>
+                <link rel="stylesheet" href="static/style.css">
             <body>
             
-            <button onclick="jumpToSecond()">I'm dont realized</button>
+            <button id="btn" onclick="jumpToSecond()" class="round-button">לא הבנתי</button>
+            <span id="H4">"play" לתרגום המשפט הנוכחי לחץ לחיצה כפולה על</span>
             <audio id="audio" controls>
                                             <source src="{file_en}" type="audio/mp3">
                                             Your browser does not support the audio element.
                             </audio>
-                            <audio id="audio2" controls>
+                            <audio id="audio2">
                                             <source src="{file_he}" type="audio/mp3">
                                             Your browser does not support the audio element.
                             </audio>
-                <span id="check"> err</span>
-
+                        </head>
                 <script>
                     {initialize_arrays_script("arr_start_en", "arr_end_en", "arr_start_he", "arr_end_he", file_en, file_he)} 
                     var audio = document.getElementById("audio");
-                    var audio2 = document.getElementById("audio2");           
+                    var audio2 = document.getElementById("audio2");
+                    var clicked = false;
 
                         function jumpToSecond() {{
                                 var j;
                                 var pos2 = audio.currentTime;
+                                clicked = 1;
                                 audio.pause();
                         for(j=0; j<arr_end_en.length-1; j++)
                             if(pos2 < arr_end_en[j+1])
                                 break;    
                         audio2.play();
                         audio2.currentTime = arr_end_he[j];
+                        if (pos2 < arr_end_en[0]){{audio2.currentTime = 0;}}
+                        
                         var time_sleep = arr_end_he[j+1]-arr_end_he[j];
                         setTimeout(function() {{
                                     audio2.pause();
                                     audio.play();
                                     audio.currentTime = pos2;
+                                    document.getElementById("H1").innerHTML = clicked;
                                 }}, time_sleep * 1000);
-                        }}
+                            }}
+                          
+                        var pos3;
+                        var pos4;
+                        
+                        audio.onpause = function() {{
+                            if (!clicked) {{ 
+                                pos3 = audio.currentTime;
+                                setTimeout(function() {{
+                                    if (!audio.paused && Math.abs(audio.currentTime - pos3) < 0.5) {{
+                                        clicked = true;
+                                        document.getElementById("btn").innerHTML = "...מתרגם את המשפט האחרון";
+                                        jumpToSecond();
+                                        clicked = false;
+                                    }}
+                                }}, 500);
+                            }}
+                        }};
+                        
+                        audio.onplay = function() {{
+                            document.getElementById("btn").innerHTML = "לא הבנתי";
+                        }};
+
                 </script>
+                <h3 id="H3"></h3>
+                <h4 id="H4"></h4>
             </body>
             </html>
             """
