@@ -38,7 +38,7 @@ async def ron11():
     return file_path1
 
 
-@app.get('/')
+@app.get('/12')
 async def root():
     return {'example': 'This is an example', 'data': 8}
 
@@ -348,7 +348,7 @@ file_en = "static/Most dog owners have.mp3"
 file_he = "static/He Most dog owners have.mp3"
 
 
-@app.get('/ron5', response_class=HTMLResponse)
+@app.get('/', response_class=HTMLResponse)
 async def ron5(sleep=3):
     en_start = [0] * 8
     time_p = 3
