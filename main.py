@@ -359,32 +359,8 @@ async def ron5(sleep=3):
     return f"""
             <!DOCTYPE html>
             <html>
-            <head>
-            <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        #container {
-            text-align: center;
-            padding: 20px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        audio {
-            width: 100%;
-            max-width: 300px;
-        }
-    </style>
-    </head>
-    <body>
+            <body>
+            
             <button onclick="jumpToSecond()">I'm dont realized</button>
             <audio id="audio" controls>
                                             <source src="{file_en}" type="audio/mp3">
@@ -418,6 +394,6 @@ async def ron5(sleep=3):
                                 }}, time_sleep * 1000);
                         }}
                 </script>
-                </body>
+            </body>
             </html>
             """
