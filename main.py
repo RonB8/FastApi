@@ -369,7 +369,7 @@ async def ron5(sleep=3):
                                             <source src="{file_en}" type="audio/mp3">
                                             Your browser does not support the audio element.
                             </audio>
-                            <audio id="audio2">
+                            <audio id="audio2" controls>
                                             <source src="{file_he}" type="audio/mp3">
                                             Your browser does not support the audio element.
                             </audio>
