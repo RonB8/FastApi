@@ -364,7 +364,7 @@ async def ron5(sleep=3):
             <body>
             
             <button id="btn" onclick="jumpToSecond()" class="round-button">לא הבנתי</button>
-            <span id="H4">"play" לתרגום המשפט הנוכחי לחץ לחיצה כפולה על</span>
+            <h id="H">"play" לתרגום המשפט הנוכחי לחץ לחיצה כפולה על</h>
             <audio id="audio" controls>
                                             <source src="{file_en}" type="audio/mp3">
                                             Your browser does not support the audio element.
