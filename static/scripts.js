@@ -4,7 +4,7 @@
 </audio>
 
 <script>
-  // יצירת עצם של AudioContext
+  // יצירת עצםם של AudioContext
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
   // משתנה המקיים את האובייקט הקשור לנגן
