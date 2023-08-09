@@ -408,13 +408,13 @@ async def ron5(sleep=3):
                             if (!clicked) {{ 
                                 pos3 = audio.currentTime;
                                 setTimeout(function() {{
-                                    if (!audio.paused && Math.abs(audio.currentTime - pos3) < 0.5) {{
+                                    if (!audio.paused && Math.abs(audio.currentTime - pos3) < 2) {{
                                         clicked = true;
                                         document.getElementById("btn").innerHTML = "...מתרגם את המשפט האחרון";
                                         jumpToSecond();
                                         clicked = false;
                                     }}
-                                }}, 500);
+                                }}, 2000);
                             }}
                         }};
                         
